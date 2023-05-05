@@ -1,5 +1,5 @@
 {
-  "name": "html-cs-js-demo",
+  "name": "e02-jack2654",
   "version": "1.0.0",
   "description": "This is the base code for an html+css+js demo non-assignment (extra credit).",
   "main": "server.js",
@@ -23,8 +23,21 @@
   "author": "@jdmar3",
   "license": "GPL-3.0-or-later",
   "dependencies": {
+    "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "html": "^1.0.0",
     "minimist": "^1.2.8",
     "morgan": "^1.10.0"
-  }
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2023-spring/e02-Jack2654.git"
+  },
+  "bugs": {
+    "url": "https://github.com/comp426-2023-spring/e02-Jack2654/issues"
+  },
+  "homepage": "https://github.com/comp426-2023-spring/e02-Jack2654#readme"
 }
