@@ -7,14 +7,19 @@ const express = require('express');
 const __dirname = path.resolve();
 const app = express();
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '/index.html'));
+    res.status(200).send("200 OK");
+    res.sendFile(path.join(__dirname, '/index.html'));
 });
 app.get('/app', function(req, res) {
+    res.status(200).send("200 OK");
     res.sendFile(path.join(__dirname, '/index.html'));
-  });
+});
+app.get("/app/", (req, res) => {
+    res.status(200).send("200 OK");
+});
 app.get("/app/rps", (req, res) => {
     res.sendFile(path.join(__dirname, '/rps.html'));
 });
