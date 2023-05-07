@@ -6,7 +6,9 @@ const path = require('path');
 const express = require('express');
 const __dirname = path.resolve();
 const app = express();
-const port = process.env.PORT || 7777;
+
+const port = process.env.PORT;
+
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '/index.html'));
 });
@@ -107,7 +109,6 @@ app.get("/app/rpsls_spock", (req, res) => {
 app.get("/app/rpsls_spock_result", (req, res) => {
     res.send(JSON.stringify(rpsls("spock")));
 });
-
 
 
 app.listen(port);
