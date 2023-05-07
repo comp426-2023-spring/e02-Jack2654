@@ -19,7 +19,9 @@ app.get("/app/rps", (req, res) => {
 app.get("/app/rpsls", (req, res) => {
     res.sendFile(path.join(__dirname, '/rpsls.html'));
 });
-
+app.get("/app/rules", (req, res) => {
+    res.sendFile(path.join(__dirname, '/rules.html'));
+});
 
 app.get("/app/rps_random", (req, res) => {
     res.sendFile(path.join(__dirname, '/rps_random_draw.html'));
