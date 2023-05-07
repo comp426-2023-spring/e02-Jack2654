@@ -2,12 +2,12 @@ import { createRequire } from 'node:module';
 import { rps, rpsls } from './rpsls.js';
 
 const require = createRequire(import.meta.url);
+const args = minimist(process.argv.slice(2));
 const path = require('path');
 const express = require('express');
 const __dirname = path.resolve();
 const app = express();
-
-const port = process.env.PORT;
+const port = args["port"] || 8080
 
 app.get('/', function(req, res) {
     res.status(200).send("200 OK");
