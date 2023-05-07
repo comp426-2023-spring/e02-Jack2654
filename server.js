@@ -1,5 +1,6 @@
 import { createRequire } from 'node:module';
 import { rps, rpsls } from './rpsls.js';
+import minimist from 'minimist';
 
 const require = createRequire(import.meta.url);
 const args = minimist(process.argv.slice(2));
