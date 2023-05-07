@@ -23,17 +23,37 @@
   </style>
   </head>
   <body>
-  
-  <div class="container">
-    <div class="jumbotron">
-      <h1><center>You Have Chosen Rock, Paper, Scissors</center></h1>
-    </div>
-  </div>
 
-  <center>
-    <button class="button button1", onclick="window.location.href = '/app/rps_random';">Random Draw</button>
-    <button class="button button2", onclick="window.location.href = '/app/rps_opp';">Play Against an Opponent</button>
-  </center>
+
+     <div class="jumbotron">
+       <h1><center>RPS Random Draw Results:</center></h1>
+     </div>
+
+
+  <div class="container"></div>
+
+
+  <script>
+    async function getUsers() {
+      let endpoint = '/app/rps_random_result';
+      try 
+      {
+        let res = await fetch(endpoint);
+        return await res.json();
+      } catch (error) 
+      {
+        console.log(error);
+      }
+    }
+
+    async function renderUsers() {
+      let users = await getUsers();
+      let html = `<div>Your random draw is: ${users.player}</div>`;
+      let container = document.querySelector('.container');
+      container.innerHTML = html;
+    }
+    renderUsers()
+  </script>
 
   <button onclick="window.location.href = '/app/';">Home</button>
 
