@@ -28,6 +28,7 @@
     "html": "^1.0.0",
     "minimist": "^1.2.8",
     "morgan": "^1.10.0",
+    "nodemon": "^2.0.22",
     "portscanner": "^2.2.0"
   },
   "directories": {
