@@ -18,9 +18,6 @@ app.get('/app', function(req, res) {
     res.status(200).send("200 OK");
     res.sendFile(path.join(__dirname, '/index.html'));
 });
-app.get("/app/", (req, res) => {
-    res.status(200).send("200 OK");
-});
 app.get("/app/rps", (req, res) => {
     res.sendFile(path.join(__dirname, '/rps.html'));
 });
