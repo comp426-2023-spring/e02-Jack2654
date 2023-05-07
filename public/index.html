@@ -1,10 +1,42 @@
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title lang="en">Rock</title>
-        <!-- Actual index.html is one directory down cd ../ -->
-    </head>
-    <body>
+<head>
+  <meta charset="UTF-8">
+  <title>Main Page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    body { padding-top: 50px; }
+    .button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  .button1 {background-color: #4CAF50;} /* Green */
+  .button2 {background-color: #008CBA;} /* Blue */
+  </style>
+  </head>
+  <body>
+  
+  <div class="container">
+    <div class="jumbotron">
+      <h1><center>Which game would you like to play?</center></h1>
+    </div>
+  </div>
+  
+  <center>
+  <button class="button button1", onclick="window.location.href = '/app/rps';">RPS</button>
+  <button class="button button2", onclick="window.location.href = '/app/rpsls';">RPSLS</button>
+  </center>
+  <button onclick="window.location.href = '/app/rules';">Rules</button>
 
-    <div lang="en">Actual index.html elsewhere, if this renders, something went wrong.</div>
-    </body>
+  </body>
+  </html>
+</body>
 </html>
