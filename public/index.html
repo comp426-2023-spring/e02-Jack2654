@@ -8,8 +8,6 @@
     </head>
     <body onload="hidethis()">
         <h1>Rock Paper Scissors Shoot!</h1>
-    <!-- Your interface markup goes here -->
-    <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
             <button type="button" class="button" id="reset" onclick="reset()">Reset</button>
             <button type="button" class="button" onclick="rules()">Rules</button>
             <div id="view_rules" style="display:none">
@@ -32,21 +30,17 @@
                 </dl> 
             </div>
         <form id="game_options">
-            <!--type of game options-->
             <h2>Choose a game to play!</h2>
             <input type="radio" id="rps" name="game_type" value="rps" onclick="rpsgame()">
                 <label for="rps">Rock Paper Scissors</label> 
             <input type="radio" id="rpsls" name="game_type" value="rpsls" onclick="rpslsgame()">
                 <label for="rpsls">Rock Paper Scissors Lizard Spock </label>
-            <!--opponent option-->
             <h2>Do you want an opponent?</h2>
             <input type="radio" id="opponent" name="opponent_type" value="opponent"  onclick="opponentgame()">
                 <label for="opponent">Yes, opponent wanted!</label> 
-            <!--play game button-->
             <button type="button" class="submit" id="play_game" onclick="playgame()">Play</button>
         </form>
         <form id="rpsls_move_options">
-            <!--<label for="dropdown">Your move:</label>-->
             Your move: 
             <select id="your_move" name="possMoves">
                 <option value=0>Rock</option>
