@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>This is placeholder html, the real website is rendered from the index.html one level down</title>
+        <title>Placeholder html</title>
         <link rel="stylesheet" href="styles.css">
             <script src="./scripts.js"></script>
     </head>
@@ -31,26 +31,20 @@
                     <dd> - Rock CRUSHES Scissors</dd>
                 </dl> 
             </div>
-            <br><br>
         <form id="game_options">
             <!--type of game options-->
             <h2>Choose a game to play!</h2>
             <input type="radio" id="rps" name="game_type" value="rps" onclick="rpsgame()">
                 <label for="rps">Rock Paper Scissors</label> 
-                <br><br>
             <input type="radio" id="rpsls" name="game_type" value="rpsls" onclick="rpslsgame()">
                 <label for="rpsls">Rock Paper Scissors Lizard Spock </label>
-                <br><br>   
             <!--opponent option-->
             <h2>Do you want an opponent?</h2>
             <input type="radio" id="opponent" name="opponent_type" value="opponent"  onclick="opponentgame()">
                 <label for="opponent">Yes, opponent wanted!</label> 
-            <br><br>
-            <br><br>
             <!--play game button-->
             <button type="button" class="submit" id="play_game" onclick="playgame()">Play</button>
         </form>
-        <br><br>
         <form id="rpsls_move_options">
             <!--<label for="dropdown">Your move:</label>-->
             Your move: 
