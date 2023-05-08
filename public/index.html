@@ -11,31 +11,27 @@
     <!-- Your interface markup goes here -->
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
             <button type="button" class="button" id="reset" onclick="reset()">Reset</button>
-
             <button type="button" class="button" onclick="rules()">Rules</button>
             <div id="view_rules" style="display:none">
-
                <dl>
-                <dt>Rules for Rock Paper Scissors:<dt>
-                    <dd>- Scissors CUTS Paper<dd>
-                    <dd>- Paper COVERS Rock<dd>
+                <dt>Rules for Rock Paper Scissors:</dl>
+                    <dd>- Scissors CUTS Paper</dd>
+                    <dd>- Paper COVERS Rock</dd>
                     <dd>- Rock CRUSHES Scissors</dd>
-                <dt>Rules for the Lizard-Spock Expansion of Rock Paper Scissors:<dt>
-                    <dd>- Scissors CUTS Paper<dd>
-                    <dd>- Paper COVERS Rock<dd>
-                    <dd>- Rock SMOOSHES Lizard<dd>
-                    <dd>- Lizard POISONS Spock<dd>
+                <dt>Rules for the Lizard-Spock Expansion of Rock Paper Scissors:</dt>
+                    <dd>- Scissors CUTS Paper</dd>
+                    <dd>- Paper COVERS Rock</dd>
+                    <dd>- Rock SMOOSHES Lizard</dd>
+                    <dd>- Lizard POISONS Spock</dd>
                     <dd>- Spock SMASHES Scissors</dd>
-                    <dd>- Scissors DECAPITATES Lizard<dd>
-                    <dd>- Lizard EATS Paper<dd>
-                    <dd>- Paper DISPROVES Spock<dd>
-                    <dd>- Spock VAPORIZES Rock<dd>
-                    <dd> - Rock CRUSHES Scissors<dd>
+                    <dd>- Scissors DECAPITATES Lizard</dd>
+                    <dd>- Lizard EATS Paper</dd>
+                    <dd>- Paper DISPROVES Spock</dd>
+                    <dd>- Spock VAPORIZES Rock</dd>
+                    <dd> - Rock CRUSHES Scissors</dd>
                 </dl> 
-                
             </div>
             <br><br>
-        
         <form id="game_options">
             <!--type of game options-->
             <h2>Choose a game to play!</h2>
@@ -45,7 +41,6 @@
             <input type="radio" id="rpsls" name="game_type" value="rpsls" onclick="rpslsgame()">
                 <label for="rpsls">Rock Paper Scissors Lizard Spock </label>
                 <br><br>   
-
             <!--opponent option-->
             <h2>Do you want an opponent?</h2>
             <input type="radio" id="opponent" name="opponent_type" value="opponent"  onclick="opponentgame()">
@@ -69,6 +64,5 @@
             <button type="button" class="submit" id="play" onclick="makeMove()">Submit</button>
         </form>
         <form id="results" hidden></form>
-
     </body>
 </html>
