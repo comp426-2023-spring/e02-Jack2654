@@ -1,27 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Main Page</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <style>
-    body { padding-top: 50px; }
-    .button {
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
-  .button1 {background-color: #4CAF50;} /* Green */
-  .button2 {background-color: #008CBA;} /* Blue */
-  </style>
-</head>
-<body>
-  <h1>Which game would you like to play?</h1>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>This is placeholder html, the real website is rendered from the index.html one level down</title>
+        <link rel="stylesheet" href="styles.css">
+            <script src="./scripts.js"></script>
+    </head>
+    <body onload="hidethis()">
+        <h1>Rock Paper Scissors Shoot!</h1>
+    <!-- Your interface markup goes here -->
+    <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
+            <button type="button" class="button" id="reset" onclick="reset()">Reset</button>
+
+            <button type="button" class="button" onclick="rules()">Rules</button>
+            <div id="view_rules" style="display:none">
+
+               <dl>
+                <dt>Rules for Rock Paper Scissors:<dt>
+                    <dd>- Scissors CUTS Paper<dd>
+                    <dd>- Paper COVERS Rock<dd>
+                    <dd>- Rock CRUSHES Scissors</dd>
+                <dt>Rules for the Lizard-Spock Expansion of Rock Paper Scissors:<dt>
+                    <dd>- Scissors CUTS Paper<dd>
+                    <dd>- Paper COVERS Rock<dd>
+                    <dd>- Rock SMOOSHES Lizard<dd>
+                    <dd>- Lizard POISONS Spock<dd>
+                    <dd>- Spock SMASHES Scissors</dd>
+                    <dd>- Scissors DECAPITATES Lizard<dd>
+                    <dd>- Lizard EATS Paper<dd>
+                    <dd>- Paper DISPROVES Spock<dd>
+                    <dd>- Spock VAPORIZES Rock<dd>
+                    <dd> - Rock CRUSHES Scissors<dd>
+                </dl> 
+                
+            </div>
+            <br><br>
+        
+        <form id="game_options">
+            <!--type of game options-->
+            <h2>Choose a game to play!</h2>
+            <input type="radio" id="rps" name="game_type" value="rps" onclick="rpsgame()">
+                <label for="rps">Rock Paper Scissors</label> 
+                <br><br>
+            <input type="radio" id="rpsls" name="game_type" value="rpsls" onclick="rpslsgame()">
+                <label for="rpsls">Rock Paper Scissors Lizard Spock </label>
+                <br><br>   
+
+            <!--opponent option-->
+            <h2>Do you want an opponent?</h2>
+            <input type="radio" id="opponent" name="opponent_type" value="opponent"  onclick="opponentgame()">
+                <label for="opponent">Yes, opponent wanted!</label> 
+            <br><br>
+            <br><br>
+            <!--play game button-->
+            <button type="button" class="submit" id="play_game" onclick="playgame()">Play</button>
+        </form>
+        <br><br>
+        <form id="rpsls_move_options">
+            <!--<label for="dropdown">Your move:</label>-->
+            Your move: 
+            <select id="your_move" name="possMoves">
+                <option value=0>Rock</option>
+                <option value=1>Paper</option>
+                <option value=2>Scissors</option>
+                <option value=3>Lizard</option>
+                <option value=4>Spock</option>
+            </select>
+            <button type="button" class="submit" id="play" onclick="makeMove()">Submit</button>
+        </form>
+        <form id="results" hidden></form>
+
+    </body>
 </html>

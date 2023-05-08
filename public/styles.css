@@ -1,8 +1,44 @@
 body {
+    background-color: cadetblue;
+
 }
 
 h1 {
+    color:black;
+    text-align: center;
+    padding: 20px;
 }
 
-p {
+h2 {
+    color:black;
+    padding: 5px;
+}
+
+
+.button{
+    padding: 10px;
+    margin: 10px;
+    background-color: greenyellow;
+    border-radius: 4px; 
+    border: green; 
+    color: green;
+    font-size: 22px; 
+    text-align: left;
+}
+
+.submit{
+    padding: 10px;
+    margin: 10px;
+    background-color: greenyellow;
+    font-size:18px;
+    text-align: left;
+    color:green;
+    border: green;
+    border-radius: 4px;
+}
+
+dl {
+    color:white; 
+    text-align: left;
+    margin:10px;
 }
