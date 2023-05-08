@@ -84,7 +84,10 @@ function makeMove(){
             var randMove = moves[Math.floor(Math.random()* 3)];
             var api = "/app/rps/play/" + randMove;
             fetch(api).then(response => response.json()).then(data => {
-                document.getElementById("results").innerText = JSON.stringify(data);
+                ret_html = `<h2>You played: ${data["player"]}</h2>
+                <h2>Your opponent played: ${data["opponent"]}</h2>
+                <h2> The result is: ${data["result"]}<\h2>`
+                document.getElementById("results").innerHTML = ret_html;
                 document.getElementById("game_options").hidden = true; 
                 document.getElementById("results").hidden = false; 
             });
@@ -92,7 +95,10 @@ function makeMove(){
             var randMove = moves[Math.floor(Math.random()* 5)];
             var api = "/app/rpsls/play/"+randMove;
             fetch(api).then(response => response.json()).then(data => {
-                document.getElementById("results").innerText = JSON.stringify(data);
+                ret_html = `<h2>You played: ${data["player"]}</h2>
+                <h2>Your opponent played: ${data["opponent"]}</h2>
+                <h2> The result is: ${data["result"]}<\h2>`
+                document.getElementById("results").innerHTML = ret_html;
                 document.getElementById("game_options").hidden = true; 
                 document.getElementById("results").hidden = false; 
             });
@@ -105,14 +111,20 @@ function makeMove(){
         if(rps){
             var api = "/app/rps/play/" + move;
             fetch(api).then(response => response.json()).then(data => {
-                document.getElementById("results").innerText = JSON.stringify(data);
+                ret_html = `<h2>You played: ${data["player"]}</h2>
+                <h2>Your opponent played: ${data["opponent"]}</h2>
+                <h2> The result is: ${data["result"]}<\h2>`
+                document.getElementById("results").innerHTML = ret_html;
                 document.getElementById("rpsls_move_options").hidden = true; 
                 document.getElementById("results").hidden = false; 
             });
         } else {
             var api = "/app/rpsls/play/"+ move;
             fetch(api).then(response => response.json()).then(data => {
-                document.getElementById("results").innerText = JSON.stringify(data);
+                ret_html = `<h2>You played: ${data["player"]}</h2>
+                <h2>Your opponent played: ${data["opponent"]}</h2>
+                <h2> The result is: ${data["result"]}<\h2>`
+                document.getElementById("results").innerHTML = ret_html;
                 document.getElementById("rpsls_move_options").hidden = true; 
                 document.getElementById("results").hidden = false; 
             });
