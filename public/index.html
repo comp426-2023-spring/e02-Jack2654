@@ -2,15 +2,41 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Placeholder html</title>
+        <title>RPS Final</title>
         <link rel="stylesheet" href="styles.css">
-            <script src="./scripts.js"></script>
+        <script src="./scripts.js"></script>
     </head>
     <body onload="hidethis()">
-        <h1>Rock Paper Scissors Shoot!</h1>
-            <button type="button" class="button" id="reset" onclick="reset()">Reset</button>
-            <button type="button" class="button" onclick="rules()">Rules</button>
-            <div id="view_rules" style="display:none">
+        <h1>Welcome Gamers!</h1>
+        <div id="game_options">
+            <h2>RPS or RPSLS?</h2>
+            <input type="radio" id="rps" name="game_type" value="rps" onclick="rpsgame()">
+                <label for="rps">Rock Paper Scissors</label>
+            <input type="radio" id="rpsls" name="game_type" value="rpsls" onclick="rpslsgame()">
+                <label for="rpsls">Rock Paper Scissors Lizard Spock </label>
+            <h2>Feeling lucky today?</h2>
+            <input type="radio" id="random" name="opponent_type" value="random" onclick="random_draw()">
+                <label for="random">Random Draw</label>
+            <input type="radio" id="opponent" name="opponent_type" value="opponent" onclick="opponentgame()">
+                <label for="opponent">Play an Opponent</label>
+            <br>
+            <input type="submit" class="submit" id="submit" onclick="playgame()">
+        </div>
+        <div id="rpsls_move_options">
+            <div><p>Your move:</p></div>
+            <select id="your_move" name="possMoves">
+                <option value="1">Rock</option>
+                <option value="2">Paper</option>
+                <option value="3">Scissors</option>
+                <option value="4">Lizard</option>
+                <option value="5">Spock</option>
+            </select>
+            <button type="submit" id="play" onclick="makeMove()">Submit</button>
+        </div>
+        <br><br><br><br><br><br>
+        <button type="button" class="button2" id="reset" onclick="reset()">Reset</button>
+        <button type="button" class="button2" onclick="rules()">Rules</button>
+        <div id="view_rules" style="display:none">
                <dl>
                 <dt>Rules for Rock Paper Scissors:</dt>
                     <dd>- Scissors CUTS Paper</dd>
@@ -26,30 +52,9 @@
                     <dd>- Lizard EATS Paper</dd>
                     <dd>- Paper DISPROVES Spock</dd>
                     <dd>- Spock VAPORIZES Rock</dd>
-                    <dd> - Rock CRUSHES Scissors</dd>
+                    <dd>- Rock CRUSHES Scissors</dd>
                 </dl>
             </div>
-        <form id="game_options">
-            <h2>Choose a game to play!</h2>
-            <input type="radio" id="rps" name="game_type" value="rps" onclick="rpsgame()">
-                <label for="rps">Rock Paper Scissors</label>
-            <input type="radio" id="rpsls" name="game_type" value="rpsls" onclick="rpslsgame()">
-                <label for="rpsls">Rock Paper Scissors Lizard Spock </label>
-            <h2>Do you want an opponent?</h2>
-            <input type="radio" id="opponent" name="opponent_type" value="opponent"  onclick="opponentgame()">
-                <label for="opponent">Yes, opponent wanted!</label>
-            <button type="submit" id="play_game" onclick="playgame()">Play</button>
-        </form>
-        <form id="rpsls_move_options">
-            Your move:
-            <select id="your_move" name="possMoves">
-                <option value="0">Rock</option>
-                <option value="1">Paper</option>
-                <option value="2">Scissors</option>
-                <option value="3">Lizard</option>
-                <option value="4">Spock</option>
-            </select>
-            <button type="submit" id="play" onclick="makeMove()">Submit</button>
-        </form>
+            <div id="results" hidden></div>
     </body>
 </html>

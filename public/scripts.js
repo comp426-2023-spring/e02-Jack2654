@@ -2,7 +2,8 @@
 // check out the coin-server example from a previous COMP 426 semester.
 // https://github.com/jdmar3/coinserver
 
-var rps = true;
+var rps = false;
+var rpsls = false;
 var opponent = false; 
 const moves = ["rock", "paper","scissors","lizard", "spock"];
 var move = "rock";
@@ -13,7 +14,7 @@ function hidethis(){
 
 function rules(){
     var x = document.getElementById("view_rules");
-    if(x.style.display === "none"){
+    if(x.style.display == "none"){
         x.style.display="flex";
     } else {
         x.style.display="none";
@@ -21,7 +22,9 @@ function rules(){
 }
 
 function reset(){
-    rps=true;
+    location.reload();
+    rps=false;
+    rpsls=false;
     opponent=false;
     move="rock";
     document.getElementById("game_options").hidden = false;
@@ -30,23 +33,32 @@ function reset(){
     document.getElementById("rps").checked = false;
     document.getElementById("rpsls").checked = false;
     document.getElementById("opponent").checked = false;
-    
+    document.getElementById("random").checked = false;
+}
+
+function unhidethis(){
+    document.getElementById("rpsls_move_options").hidden = false; 
 }
 
 function rpsgame(){
     rps = true;
+    rpsls = false;
 }
 
 function rpslsgame(){
     rps = false;
+    rpsls = true;
 }
 
 function opponentgame(){
     opponent = true;
 }
 
+function random_draw(){
+    opponent = false;
+}
+
 function playgame(){
-    
     if (!document.getElementById("rps").checked && !document.getElementById("rpsls").checked)
         window.alert("Must select a game to play");
     else{
@@ -54,12 +66,12 @@ function playgame(){
             makeMove()
         }
         else{
-            document.getElementById("game_options").hidden = true;
             document.getElementById("rpsls_move_options").hidden = false; 
+            document.getElementById("game_options").hidden = true;
             if (rps){
                 var dropdown = document.getElementById("your_move");
-                dropdown.remove(4);
-                dropdown.remove(3);
+                dropdown.options[3] = null;
+                dropdown.options[3] = null;
             }
         } 
     }
@@ -89,7 +101,7 @@ function makeMove(){
     }
     else{
         var index = document.getElementById("your_move");
-        move = moves[index.value];
+        move = moves[index.value - 1];
         if(rps){
             var api = "/app/rps/play/" + move;
             fetch(api).then(response => response.json()).then(data => {
@@ -106,5 +118,4 @@ function makeMove(){
             });
         }
     } 
-
 }
